@@ -1,0 +1,60 @@
+# Mars Radar V10 - Ticker List Configuration
+# 
+# This file is optional. If left empty or not present, Mars Radar will
+# automatically scan the top volume coins from Binance and Bybit.
+#
+# Format: One ticker per line (use exchange format)
+# Example: BTC/USDT:USDT (Binance/Bybit futures format)
+#
+# Lines starting with # are comments and will be ignored.
+
+# Major Cryptocurrencies (Recommended for beginners)
+BTC/USDT:USDT
+ETH/USDT:USDT
+BNB/USDT:USDT
+SOL/USDT:USDT
+XRP/USDT:USDT
+
+# Large Cap Altcoins
+ADA/USDT:USDT
+DOGE/USDT:USDT
+DOT/USDT:USDT
+MATIC/USDT:USDT
+LINK/USDT:USDT
+UNI/USDT:USDT
+AVAX/USDT:USDT
+ATOM/USDT:USDT
+
+# Mid Cap (Higher volatility)
+# Uncomment to include these
+# PEPE/USDT:USDT
+# SHIB/USDT:USDT
+# FTM/USDT:USDT
+# SAND/USDT:USDT
+# MANA/USDT:USDT
+
+# DeFi Tokens
+# AAVE/USDT:USDT
+# SUSHI/USDT:USDT
+# CRV/USDT:USDT
+# COMP/USDT:USDT
+
+# Layer 2 Solutions
+# ARB/USDT:USDT
+# OP/USDT:USDT
+
+# AI/ML Tokens
+# AGIX/USDT:USDT
+# FET/USDT:USDT
+
+# Metaverse/Gaming
+# AXS/USDT:USDT
+# GALA/USDT:USDT
+
+# Note: Mars Radar will automatically filter out:
+# - Low volume coins (< $15M daily volume by default)
+# - Delisted or suspended pairs
+# - Coins with extreme volatility (crazy_day_threshold)
+#
+# Tip: Leave this file empty to let the AI automatically discover
+# the best opportunities across all available markets!

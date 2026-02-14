@@ -1,0 +1,85 @@
+# Mars Radar V10 - Git Ignore File
+
+# Configuration Files (NEVER commit credentials!)
+config.ini
+*.ini
+!config.ini.template
+
+# Database Files
+*.db
+*.db-shm
+*.db-wal
+market_data_*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+mars_radar.log
+
+# Data Files
+Mars_List.txt
+*.csv
+*.json
+*.parquet
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Backup Files
+*.bak
+*.backup
+*.old
+*~
+
+# OS Files
+Thumbs.db
+.DS_Store
+
+# Sensitive Data
+secrets/
+credentials/
+api_keys/

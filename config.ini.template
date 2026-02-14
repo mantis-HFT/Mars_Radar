@@ -1,0 +1,118 @@
+# Mars Quant Suite Configuration V96
+# ---
+# Version: 96.0
+# Last Updated: 2025-12-29
+# ---
+# INSTRUCTIONS: Copy this file to 'config.ini' and fill in your credentials
+
+[optimization_settings]
+sources = binance,bybit
+tickers =
+ticker_list_file = Mars_List.txt
+data_interval = 1h
+max_history_days = 1825
+rate_limit_sleep = 1
+investment = 1000
+min_grid_count = 20
+max_grid_count = 80
+grid_count_step = 10
+std_dev_multipliers = 3.0, 4.0, 5.0, 6.0, 7.0
+min_leverage = 2
+max_leverage = 15
+max_parallel_processes = 50
+overwrite_existing_results = true
+
+[analysis_parameters]
+maintenance_margin_rate = 0.005
+fee_per_trade_percent = 0.0002
+
+[scheduler]
+; Set to true to keep the downloader running in a loop
+run_continuously = false
+; How often to check for new data (in seconds). 3600 = 1 hour.
+check_interval = 3600
+; Download Funding Rate history? (Warning: Slow)
+fetch_funding_rates = true
+
+
+[enhancement_settings]
+; Set to true to enable each of the advanced validation tests
+run_walk_forward = true
+run_static_backtests = true
+run_monte_carlo = true
+run_event_study = true
+run_portfolio_backtest = true
+run_ticker_trait_analysis = true
+
+[ticker_trait_analysis]
+; The timeframes to scan for high-volatility events. Comma-separated.
+intervals = 15m,1h,4h
+; The % change for a candle (high-low) to be flagged as having high price volatility.
+high_volatility_threshold = 0.40
+; The % change for a candle (high-low) to be flagged as having extreme price volatility.
+extreme_volatility_threshold = 1.00
+; The % change from the previous candle's volume to be flagged as a volume spike.
+volume_spike_threshold = 2.0
+; The maximum allowed consecutive days of unidirectional price movement. 
+; Tickers exceeding this will receive a Score of 0.
+max_streak_threshold = 10
+
+[walk_forward_settings]
+total_walk_forward_days = 365
+optimization_days = 60
+validation_days = 30
+step_days = 30
+
+[static_backtest_settings]
+periods = 90, 60, 45, 30, 15, 7, 3
+
+[monte_carlo_settings]
+num_simulations = 1000
+
+[event_study_settings]
+event_window_days = 3
+
+[radar_settings]
+# Telegram Configuration
+# Get your bot token from @BotFather on Telegram
+telegram_bot_token = YOUR_BOT_TOKEN_HERE
+# Get your chat ID from @userinfobot on Telegram (comma-separated for multiple recipients)
+telegram_chat_ids = YOUR_CHAT_ID_HERE
+
+# Radar Configuration
+check_interval_seconds = 3600
+top_n_coins = 50
+
+# Grid Strategy Configuration (1-3 days)
+# target_days: How many days is the bot expected to run? (Default 3 days)
+grid_target_days = 3.0
+
+# grid_width_factor: Grid width safety coefficient (Default 2.0)
+# 1.5 = Narrow (High profit/grid, high out-of-range risk)
+# 2.0 = Medium (Recommended)
+# 3.0 = Wide (Safe, suitable for 1-week deployment)
+grid_width_factor = 2.0
+
+# min_profit_per_grid: Minimum profit per grid to cover fees (0.002 = 0.2%)
+min_profit_per_grid = 0.002
+
+# ATR Settings for Grid Step
+atr_factor = 1.0    
+
+# NEW: Fibonacci / Swing High-Low Lookback
+# Defines how many days back to look for the Highest High and Lowest Low
+fib_lookback_days = 14.0
+
+
+# --- Smart Filters (NEW V5) ---
+# Standard minimum volume for consideration (USD)
+standard_min_volume = 15000000 
+
+# Lower volume threshold allowed if there's a Spike (USD)
+spike_min_volume = 2000000 
+
+# Spike Factor: How many times above average must recent volume be to qualify as a spike?
+volume_spike_ratio = 3.0
+
+# Crazy Day Threshold: How many times High/Low before it's considered dangerous?
+crazy_day_threshold = 3.0
